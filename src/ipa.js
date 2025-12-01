@@ -1,3 +1,131 @@
+export const classifiedChoices = [
+  {
+    desc: "P-B related phonemes",
+    choices: [
+      { id: "0070", symbol: "p" },
+      { id: "0062", symbol: "b" },
+      { id: "006D", symbol: "m" },
+      { id: "0076", symbol: "v" },
+    ],
+  },
+  {
+    desc: "T-D related phonemes",
+    choices: [
+      { id: "0074", symbol: "t" },
+      { id: "0062", symbol: "d" },
+      { id: "0256", symbol: "ɖ" },
+      { id: "0288", symbol: "ʈ" },
+    ],
+  },
+  {
+    desc: "M-N related phonemes",
+    choices: [
+      { id: "006D", symbol: "m" },
+      { id: "006E", symbol: "n" },
+      { id: "0273", symbol: "ɳ" },
+      { id: "0272", symbol: "ɲ" },
+    ],
+  },
+  {
+    desc: "V related phonemes",
+    choices: [
+      { id: "03B2", symbol: "β" },
+      { id: "028B", symbol: "ʋ" },
+      { id: "0076", symbol: "v" },
+      { id: "0076", symbol: "v" },
+    ],
+  },
+  {
+    desc: "F related phonemes",
+    choices: [
+      { id: "0066", symbol: "f" },
+      { id: "0278", symbol: "ɸ" },
+      { id: "03B8", symbol: "θ" },
+      { id: "0073", symbol: "s" },
+    ],
+  },
+  {
+    desc: "K-G related phonemes",
+    choices: [
+      { id: "006B", symbol: "k" },
+      { id: "0063", symbol: "c" },
+      { id: "0071", symbol: "q" },
+      { id: "0261", symbol: "g" },
+    ],
+  },
+  {
+    desc: "G related phonemes",
+    choices: [
+      { id: "0261", symbol: "g" },
+      { id: "025F", symbol: "ɟ" },
+      { id: "0262", symbol: "ɢ" },
+      { id: "014B", symbol: "ŋ" },
+      { id: "0280", symbol: "ʀ" },
+      { id: "0281", symbol: "ʁ" },
+      { id: "0263", symbol: "ɣ" },
+    ],
+  },
+  {
+    desc: "R-L related phonemes",
+    choices: [
+      { id: "0072", symbol: "r" },
+      { id: "027E", symbol: "ɾ" },
+      { id: "0279", symbol: "ɹ" },
+      { id: "027D", symbol: "ɽ" },
+      { id: "006C", symbol: "l" },
+      { id: "026D", symbol: "ɭ" },
+    ],
+  },
+  {
+    desc: "S related phonemes",
+    choices: [
+      { id: "0073", symbol: "s" },
+      { id: "0283", symbol: "ʃ" },
+      { id: "03B8", symbol: "θ" },
+      { id: "0282", symbol: "ʂ" },
+      { id: "00E7", symbol: "ç" },
+    ],
+  },
+  {
+    desc: "Z related phonemes",
+    choices: [
+      { id: "007A", symbol: "z" },
+      { id: "00F0", symbol: "ð" },
+      { id: "0292", symbol: "ʒ" },
+      { id: "0290", symbol: "ʐ" },
+    ],
+  },
+  {
+    desc: "J related phonemes",
+    choices: [
+      { id: "006A", symbol: "j" },
+      { id: "029D", symbol: "ʝ" },
+      { id: "026E", symbol: "ɮ" },
+      { id: "028E", symbol: "ʎ" },
+      { id: "025F", symbol: "ɟ" },
+    ],
+  },
+  {
+    desc: "H related phonemes",
+    choices: [
+      { id: "0068", symbol: "h" },
+      { id: "0078", symbol: "x" },
+      { id: "026E", symbol: "χ" },
+      { id: "0127", symbol: "ħ" },
+      { id: "0266", symbol: "ɦ" },
+    ],
+  },
+  {
+    desc: "Special phonemes",
+    choices: [
+      { id: "0294", symbol: "ʔ" },
+      { id: "0295", symbol: "ʕ" },
+      { id: "0274", symbol: "ɴ" },
+      { id: "0270", symbol: "ɰ" },
+    ],
+  },
+]
+
 export const symbols = [
   { symbol: "p", desc: "VOICELESS BILABIAL PLOSIVE", id: "0070" },
   { symbol: "b", desc: "VOICED BILABIAL PLOSIVE", id: "0062" },
