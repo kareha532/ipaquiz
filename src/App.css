@@ -19,4 +19,20 @@
   text-decoration: none;
   padding: .5em 2em;
   border-radius: 10px;
+  border-color: darkblue;
+  transition: 0.2s ease-in-out;
+}
+
+#start-btn:hover {
+  background: darkblue;
+  transition: 0.2s ease-in-out;
+}
+
+#start-reset-btn-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#start-reset-btn-container button {
+  margin-bottom: 1em;
 }

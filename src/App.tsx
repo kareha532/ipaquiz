@@ -3,14 +3,24 @@ import { useState } from 'react'
 // import viteLogo from '/vite.svg'
 import './App.css'
 
-import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 function App() {
   // const [count, setCount] = useState(0)
   const [mode, setMode] = useState("")
   const [type, setType] = useState("")
+  const navi = useNavigate()
 
   const changeType = (to: string) => setType(to)
+
+  const startGame = () => {
+    navi("/game/" + type)
+  }
+
+  const resetGame = () => {
+    setMode("")
+    setType("")
+  }
 
   return (
     <div className="flex-center">
@@ -33,14 +43,19 @@ function App() {
         </button>
       </div>
 
-      { mode !== "" && (
+      {mode !== "" && (
         <>
           <div>問題の種類</div>
           <TypeSelector mode={mode} type={type} changeType={changeType} />
         </>
       )}
 
-      <Link id="start-btn" to={"/game/" + type}>スタート</Link>
+      {type &&
+        <div id="start-reset-btn-container">
+          <button onClick={startGame} id="start-btn" >スタート</button>
+          <button onClick={resetGame} id="reset-btn" >リセット</button>
+        </div>
+      }
     </div>
   )
 }

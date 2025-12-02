@@ -1,25 +1,33 @@
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 1.3rem;
   line-height: 1.5;
   font-weight: 400;
 }
 
+body {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 button, select {
-  border: solid 1px limegreen;
+  border: solid 2px green;
   border-radius: 10px;
   background: limegreen;
   color: white;
   padding: .5em 2em;
   font-size: 1em;
+  transition: 0.2s ease-in-out;
 }
 
 button:hover {
-  cursor: pointer
+  cursor: pointer;
+  background: green;
+  transition: 0.2s ease-in-out;
 }
 
 button:disabled {
   background: #eee;
+  cursor: not-allowed;
   color: #ccc;
   border-style: dotted;
   border-color: #ccc;
