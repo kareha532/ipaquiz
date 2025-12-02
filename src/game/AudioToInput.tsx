@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react"
-import { classifiedChoices } from "../ipa.ts"
+import { symbols } from "../ipa.ts"
 import { useOutletContext } from "react-router-dom"
 
 type playStateT = "NOTPLAYED" | "LOADING" | "LOADED" | "PLAYING" | "PAUSED" | "ENDED"
@@ -9,7 +9,7 @@ type scoreT = {
   corrected: boolean
 }
 
-export default function AudioToIPA() {
+export default function AudioToInput() {
 
   const [playState, setPlayState] = useState<playStateT>('NOTPLAYED')
   const [isFinishedPlaying, setIsFinishedPlaying] = useState(false)
@@ -22,12 +22,13 @@ export default function AudioToIPA() {
     setIsFinishedGame
   ] = useOutletContext<any>()
 
-  const [answerIdx, setAnswerIdx] = useState(0) // Correct choice
-  const [nextAnswerIdx, setNextAnswerIdx] = useState(0) // Correct choice
+  // const [answerIdx, setAnswerIdx] = useState(0) // Correct choice
+  // const [nextAnswerIdx, setNextAnswerIdx] = useState(0) // Correct choice
   const [speakerIdx, setSpeakerIdx] = useState(0)
   const [score, setScore] = useState<scoreT[]>([])
   const [isCorrect, setIsCorrect] = useState(false)
-  const [selectedChoice, setSelectedChoice] = useState("")
+  const [isAnswered, setIsAnswered] = useState(false)
+  // const [selectedChoice, setSelectedChoice] = useState("")
 
   // const ipa: Record<string, any>[] = symbols.slice(0, 10)
   const [choice, setChoice] = useState<Record<string, any>[]>([])
@@ -36,45 +37,20 @@ export default function AudioToIPA() {
   const speakers = ["JE", "JH", "PL", "JW"]
 
   const audioRef = useRef<HTMLAudioElement>(null)
+  const inputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
     const createdChoices = createChoices()
     setTimeout(() => setChoice(() => createdChoices), 500)
-    setAnswerIdx(Math.floor(Math.random() * createdChoices[currentIdx].length))
     audioRef.current?.load()
   }, [])
 
   const createChoices = () => {
     let choiceC = []
     for (let i = 0; i < 10; i++) {
-      const idx = Math.floor(Math.random() * classifiedChoices.length)
-      let randChoice = classifiedChoices[idx].choices
-
-      // if choices > 4, select four of those
-      if (randChoice.length > 4) {
-        // using set for performance, idgf about drawbacks
-        let randIdxs = new Set<number>()
-        let chosenFour = []
-
-        // do until four numbers are picked
-        while (randIdxs.size < 4) {
-          const idx = Math.floor(Math.random() * randChoice.length)
-
-          if (!randIdxs.has(idx)) {
-            randIdxs.add(idx)
-            chosenFour.push(randChoice[idx])
-          }
-        }
-
-        // console.log(randIdxs, chosenFour)
-        randChoice = chosenFour
-      }
-
-      // const randChoiceC = randChoice.slice(0, 4)
-
-      choiceC.push(randChoice)
+      const idx = Math.floor(Math.random() * symbols.length)
+      choiceC.push(symbols[idx])
     }
-
     // console.log(choiceC)
     return choiceC
 
@@ -126,26 +102,27 @@ export default function AudioToIPA() {
   }
 
   const handleCorrect = () => {
-    console.log("Correct!")
+    // console.log("Correct!")
     const newScore = score.slice()
     setIsCorrect(true)
-    newScore.push({ symbol: choice[currentIdx][answerIdx].symbol, id: currentQuestion[answerIdx].id, corrected: true })
+    newScore.push({ symbol: choice[currentIdx].symbol, id: currentQuestion.id, corrected: true })
     setScore(newScore)
   }
 
   const handleIncorrect = () => {
-    console.log("Incorrect...")
+    // console.log("Incorrect...")
     const newScore = score.slice()
-    newScore.push({ symbol: choice[currentIdx][answerIdx].symbol, id: currentQuestion[answerIdx].id, corrected: false })
+    newScore.push({ symbol: choice[currentIdx].symbol, id: currentQuestion.id, corrected: false })
     setScore(newScore)
   }
 
   const handleAnswer = (userChoice: string) => {
     audioRef.current?.pause()
 
-    console.log(userChoice)
-    setSelectedChoice(userChoice)
-    if (userChoice === currentQuestion[answerIdx].symbol) {
+    setIsAnswered(true)
+
+    // console.log(userChoice)
+    if (userChoice === currentQuestion.symbol) {
       handleCorrect()
     }
     else {
@@ -154,7 +131,7 @@ export default function AudioToIPA() {
 
     setPlayState("NOTPLAYED")
 
-    console.log(currentIdx, questionAmount)
+    // console.log(currentIdx, questionAmount)
 
     if (currentIdx + 1 === questionAmount) {
       setTimeout(() => setIsFinishedGame(true), 1000)
@@ -162,24 +139,22 @@ export default function AudioToIPA() {
     }
 
     // preload the next audio by determining the next answer in advance(delaying render)
-    setNextAnswerIdx(() => Math.floor(Math.random() * choice[currentIdx + 1].length))
-    audioRef.current!.src = baseURL + "/" + speakers[speakerIdx] + "/" + choice[currentIdx + 1][nextAnswerIdx].id + ".mp3"
+    audioRef.current!.src = baseURL + "/" + speakers[speakerIdx] + "/" + choice[currentIdx + 1].id + ".mp3"
     audioRef.current?.load()
 
     setTimeout(() => {
       setIsFinishedPlaying(false)
       setIsCorrect(false)
       setCurrentIdx(currentIdx + 1)
-      setAnswerIdx(nextAnswerIdx)
       setPlayState("LOADED")
-      setSelectedChoice("")
+      setIsAnswered(false)
     }, 1000)
 
-    console.log(choice, answerIdx)
+    // console.log(choice, answerIdx)
   }
 
   const handleAnswerColor = () => {
-    if (!selectedChoice) return
+    if (!isAnswered) return
 
     if (isCorrect) {
       return "corrected"
@@ -215,7 +190,6 @@ export default function AudioToIPA() {
     )
   }
   else if (!choice.length) {
-    console.log("Hi")
     return (
       <div></div>
     )
@@ -227,11 +201,13 @@ export default function AudioToIPA() {
           ref={audioRef}
           onCanPlay={handleLoadedAudio}
           onEnded={handleEndAudio}
-          src={baseURL + "/" + speakers[speakerIdx] + "/" + currentQuestion[answerIdx].id + ".mp3"}
+          src={baseURL + "/" + speakers[speakerIdx] + "/" + currentQuestion.id + ".mp3"}
         />
         { /* JSON.stringify(choice) */}
         { /* JSON.stringify(score) */}
         { /*playState*/}
+
+        { /* audioRef.current?.src */ }
 
         <div>
           <button
@@ -245,8 +221,8 @@ export default function AudioToIPA() {
             onClick={handlePlayAudio}
 
           >
-            {selectedChoice !== ""
-              ? <span>{currentQuestion[answerIdx].symbol}</span>
+            {isAnswered
+              ? <span>{currentQuestion.symbol}</span>
               : <PlayButton playState={playState} />
             }
           </button>
@@ -257,14 +233,12 @@ export default function AudioToIPA() {
 
         {isFinishedPlaying &&
           <div id="choices-container">
-            {choice[currentIdx].slice(0, 4).map((c: Record<string, any>) => (
-              <button
-                className={selectedChoice === c.symbol ? "selected" : ""}
-                onClick={() => handleAnswer(c.symbol)}
-              >
-                [{c.symbol}]
-              </button>
-            ))}
+            <input placeholder="ここにIPAを入力..." ref={inputRef} id="input" />
+            <button
+              // className={selectedChoice === c.symbol ? "selected" : ""}
+              onClick={() => handleAnswer(inputRef.current?.value as string)}
+            >回答
+            </button>
           </div>
         }
       </>

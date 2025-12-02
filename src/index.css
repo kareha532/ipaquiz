@@ -19,6 +19,21 @@ button, select {
   transition: 0.2s ease-in-out;
 }
 
+input {
+  border: solid 2px gray;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.2em;
+  height: 50px
+}
+
+input:focus {
+  border-color: green;
+}
+
+
 button:hover {
   cursor: pointer;
   background: green;

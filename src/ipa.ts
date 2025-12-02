@@ -12,7 +12,7 @@ export const classifiedChoices = [
     desc: "T-D related phonemes",
     choices: [
       { id: "0074", symbol: "t" },
-      { id: "0062", symbol: "d" },
+      { id: "0064", symbol: "d" },
       { id: "0256", symbol: "ɖ" },
       { id: "0288", symbol: "ʈ" },
     ],
@@ -32,7 +32,7 @@ export const classifiedChoices = [
       { id: "03B2", symbol: "β" },
       { id: "028B", symbol: "ʋ" },
       { id: "0076", symbol: "v" },
-      { id: "0076", symbol: "v" },
+      { id: "2C71", symbol: "ⱱ" },
     ],
   },
   {
@@ -110,7 +110,7 @@ export const classifiedChoices = [
     choices: [
       { id: "0068", symbol: "h" },
       { id: "0078", symbol: "x" },
-      { id: "026E", symbol: "χ" },
+      { id: "03C7", symbol: "χ" },
       { id: "0127", symbol: "ħ" },
       { id: "0266", symbol: "ɦ" },
     ],
@@ -124,6 +124,510 @@ export const classifiedChoices = [
       { id: "0270", symbol: "ɰ" },
     ],
   },
+]
+
+
+export const words = [
+  {
+    "lang": "fr",
+    "word": "bonjour",
+    "ipa": ["bɔ̃.ʒuʁ"]
+  },
+  {
+    "lang": "fr",
+    "word": "merci",
+    "ipa": ["mɛʁ.si"]
+  },
+  {
+    "lang": "fr",
+    "word": "oui",
+    "ipa": ["wi"]
+  },
+  {
+    "lang": "fr",
+    "word": "non",
+    "ipa": ["nɔ̃"]
+  },
+  {
+    "lang": "fr",
+    "word": "eau",
+    "ipa": ["o"]
+  },
+  {
+    "lang": "fr",
+    "word": "homme",
+    "ipa": ["ɔm"]
+  },
+  {
+    "lang": "fr",
+    "word": "femme",
+    "ipa": ["fam"]
+  },
+  {
+    "lang": "fr",
+    "word": "manger",
+    "ipa": ["mɑ̃.ʒe"]
+  },
+  {
+    "lang": "fr",
+    "word": "petit",
+    "ipa": ["pə.ti"]
+  },
+  {
+    "lang": "fr",
+    "word": "grand",
+    "ipa": ["ɡʁɑ̃"]
+  },
+  {
+    "lang": "fr",
+    "word": "table",
+    "ipa": ["tabl"]
+  },
+  {
+    "lang": "fr",
+    "word": "chien",
+    "ipa": ["ʃjɛ̃"]
+  },
+  {
+    "lang": "fr",
+    "word": "chat",
+    "ipa": ["ʃa"]
+  },
+  {
+    "lang": "fr",
+    "word": "livre",
+    "ipa": ["livʁ"]
+  },
+  {
+    "lang": "fr",
+    "word": "parler",
+    "ipa": ["paʁ.le"]
+  },
+  {
+    "lang": "fr",
+    "word": "jour",
+    "ipa": ["ʒuʁ"]
+  },
+  {
+    "lang": "fr",
+    "word": "nuit",
+    "ipa": ["nɥi"]
+  },
+  {
+    "lang": "fr",
+    "word": "heure",
+    "ipa": ["œʁ"]
+  },
+  {
+    "lang": "fr",
+    "word": "ami",
+    "ipa": ["a.mi"]
+  },
+  {
+    "lang": "fr",
+    "word": "voiture",
+    "ipa": ["vwa.tyʁ"]
+  },
+  {
+    "lang": "fr",
+    "word": "regarder",
+    "ipa": ["ʁə.ɡaʁ.de"]
+  },
+  {
+    "lang": "fr",
+    "word": "soleil",
+    "ipa": ["sɔ.lɛj"]
+  },
+  {
+    "lang": "fr",
+    "word": "lune",
+    "ipa": ["lyn"]
+  },
+  {
+    "lang": "fr",
+    "word": "temps",
+    "ipa": ["tɑ̃"]
+  },
+  {
+    "lang": "fr",
+    "word": "aimer",
+    "ipa": ["e.me"]
+  },
+  {
+    "lang": "fr",
+    "word": "pomme",
+    "ipa": ["pɔm"]
+  },
+  {
+    "lang": "fr",
+    "word": "ville",
+    "ipa": ["vil"]
+  },
+  {
+    "lang": "fr",
+    "word": "maison",
+    "ipa": ["mɛ.zɔ̃"]
+  },
+  {
+    "lang": "fr",
+    "word": "travailler",
+    "ipa": ["tʁa.va.je"]
+  },
+  {
+    "lang": "fr",
+    "word": "chambre",
+    "ipa": ["ʃɑ̃bʁ"]
+  },
+  {
+    "lang": "fr",
+    "word": "porte",
+    "ipa": ["pɔʁt"]
+  },
+  {
+    "lang": "fr",
+    "word": "fenêtre",
+    "ipa": ["fə.nɛtʁ"]
+  },
+  {
+    "lang": "fr",
+    "word": "boire",
+    "ipa": ["bwaʁ"]
+  },
+  {
+    "lang": "fr",
+    "word": "chaud",
+    "ipa": ["ʃo"]
+  },
+  {
+    "lang": "fr",
+    "word": "froid",
+    "ipa": ["fʁwa"]
+  },
+  {
+    "lang": "fr",
+    "word": "nouveau",
+    "ipa": ["nu.vo"]
+  },
+  {
+    "lang": "fr",
+    "word": "vieux",
+    "ipa": ["vjø"]
+  },
+  {
+    "lang": "fr",
+    "word": "école",
+    "ipa": ["e.kɔl"]
+  },
+  {
+    "lang": "fr",
+    "word": "professeur",
+    "ipa": ["pʁɔ.fɛ.sœʁ"]
+  },
+  {
+    "lang": "fr",
+    "word": "étudiant",
+    "ipa": ["e.ty.djɑ̃"]
+  },
+  {
+    "lang": "fr",
+    "word": "problème",
+    "ipa": ["pʁɔ.blɛm"]
+  },
+  {
+    "lang": "fr",
+    "word": "solution",
+    "ipa": ["sɔ.ly.sjɔ̃"]
+  },
+  {
+    "lang": "fr",
+    "word": "question",
+    "ipa": ["kɛs.tjɔ̃"]
+  },
+  {
+    "lang": "fr",
+    "word": "réponse",
+    "ipa": ["ʁe.pɔ̃s"]
+  },
+  {
+    "lang": "fr",
+    "word": "dix",
+    "ipa": ["dis"]
+  },
+  {
+    "lang": "fr",
+    "word": "cent",
+    "ipa": ["sɑ̃"]
+  },
+  {
+    "lang": "fr",
+    "word": "pied",
+    "ipa": ["pje"]
+  },
+  {
+    "lang": "fr",
+    "word": "main",
+    "ipa": ["mɛ̃"]
+  },
+  {
+    "lang": "fr",
+    "word": "tête",
+    "ipa": ["tɛt"]
+  },
+  {
+    "lang": "fr",
+    "word": "cœur",
+    "ipa": ["kœʁ"]
+  },
+  {
+    "lang": "en",
+    "word": "hello",
+    "ipa": ["həˈloʊ", "heˈloʊ"]
+  },
+  {
+    "lang": "en",
+    "word": "thank",
+    "ipa": ["θæŋk"]
+  },
+  {
+    "lang": "en",
+    "word": "yes",
+    "ipa": ["jɛs"]
+  },
+  {
+    "lang": "en",
+    "word": "no",
+    "ipa": ["noʊ"]
+  },
+  {
+    "lang": "en",
+    "word": "water",
+    "ipa": ["ˈwɔːtər", "ˈwɑːtər"]
+  },
+  {
+    "lang": "en",
+    "word": "man",
+    "ipa": ["mæn"]
+  },
+  {
+    "lang": "en",
+    "word": "woman",
+    "ipa": ["ˈwʊmən"]
+  },
+  {
+    "lang": "en",
+    "word": "eat",
+    "ipa": ["iːt"]
+  },
+  {
+    "lang": "en",
+    "word": "small",
+    "ipa": ["smɔːl"]
+  },
+  {
+    "lang": "en",
+    "word": "big",
+    "ipa": ["bɪɡ"]
+  },
+  {
+    "lang": "en",
+    "word": "table",
+    "ipa": ["ˈteɪbəl"]
+  },
+  {
+    "lang": "en",
+    "word": "dog",
+    "ipa": ["dɔːɡ", "dɑːɡ"]
+  },
+  {
+    "lang": "en",
+    "word": "cat",
+    "ipa": ["kæt"]
+  },
+  {
+    "lang": "en",
+    "word": "book",
+    "ipa": ["bʊk"]
+  },
+  {
+    "lang": "en",
+    "word": "speak",
+    "ipa": ["spiːk"]
+  },
+  {
+    "lang": "en",
+    "word": "day",
+    "ipa": ["deɪ"]
+  },
+  {
+    "lang": "en",
+    "word": "night",
+    "ipa": ["naɪt"]
+  },
+  {
+    "lang": "en",
+    "word": "hour",
+    "ipa": ["aʊər"]
+  },
+  {
+    "lang": "en",
+    "word": "friend",
+    "ipa": ["frɛnd"]
+  },
+  {
+    "lang": "en",
+    "word": "car",
+    "ipa": ["kɑːr"]
+  },
+  {
+    "lang": "en",
+    "word": "see",
+    "ipa": ["siː"]
+  },
+  {
+    "lang": "en",
+    "word": "sun",
+    "ipa": ["sʌn"]
+  },
+  {
+    "lang": "en",
+    "word": "moon",
+    "ipa": ["muːn"]
+  },
+  {
+    "lang": "en",
+    "word": "time",
+    "ipa": ["taɪm"]
+  },
+  {
+    "lang": "en",
+    "word": "love",
+    "ipa": ["lʌv"]
+  },
+  {
+    "lang": "en",
+    "word": "apple",
+    "ipa": ["ˈæpəl"]
+  },
+  {
+    "lang": "en",
+    "word": "city",
+    "ipa": ["ˈsɪti"]
+  },
+  {
+    "lang": "en",
+    "word": "house",
+    "ipa": ["haʊs"]
+  },
+  {
+    "lang": "en",
+    "word": "work",
+    "ipa": ["wɜːrk"]
+  },
+  {
+    "lang": "en",
+    "word": "room",
+    "ipa": ["ruːm", "rʊm"]
+  },
+  {
+    "lang": "en",
+    "word": "door",
+    "ipa": ["dɔːr"]
+  },
+  {
+    "lang": "en",
+    "word": "window",
+    "ipa": ["ˈwɪndoʊ"]
+  },
+  {
+    "lang": "en",
+    "word": "drink",
+    "ipa": ["drɪŋk"]
+  },
+  {
+    "lang": "en",
+    "word": "hot",
+    "ipa": ["hɑːt", "hɒt"]
+  },
+  {
+    "lang": "en",
+    "word": "cold",
+    "ipa": ["koʊld"]
+  },
+  {
+    "lang": "en",
+    "word": "new",
+    "ipa": ["nuː", "njuː"]
+  },
+  {
+    "lang": "en",
+    "word": "old",
+    "ipa": ["oʊld"]
+  },
+  {
+    "lang": "en",
+    "word": "school",
+    "ipa": ["skuːl"]
+  },
+  {
+    "lang": "en",
+    "word": "teacher",
+    "ipa": ["ˈtiːtʃər"]
+  },
+  {
+    "lang": "en",
+    "word": "student",
+    "ipa": ["ˈstuːdənt", "ˈstjuːdənt"]
+  },
+  {
+    "lang": "en",
+    "word": "problem",
+    "ipa": ["ˈprɑːbləm", "ˈprɒbləm"]
+  },
+  {
+    "lang": "en",
+    "word": "solution",
+    "ipa": ["səˈluːʃən"]
+  },
+  {
+    "lang": "en",
+    "word": "question",
+    "ipa": ["ˈkwes.tʃən", "ˈkwɛs.tʃən"]
+  },
+  {
+    "lang": "en",
+    "word": "answer",
+    "ipa": ["ˈænsər"]
+  },
+  {
+    "lang": "en",
+    "word": "ten",
+    "ipa": ["tɛn"]
+  },
+  {
+    "lang": "en",
+    "word": "hundred",
+    "ipa": ["ˈhʌndrəd"]
+  },
+  {
+    "lang": "en",
+    "word": "foot",
+    "ipa": ["fʊt"]
+  },
+  {
+    "lang": "en",
+    "word": "hand",
+    "ipa": ["hænd"]
+  },
+  {
+    "lang": "en",
+    "word": "head",
+    "ipa": ["hɛd"]
+  },
+  {
+    "lang": "en",
+    "word": "heart",
+    "ipa": ["hɑːrt"]
+  }
 ]
 
 export const symbols = [
@@ -191,16 +695,16 @@ export const symbols = [
   // { symbol: "ʼ", desc: "EJECTIVE", id: "02BC" },
   { symbol: "ǀ", desc: "DENTAL CLICK", id: "01C0" },
   { symbol: "ɗ", desc: "VOICED DENTAL/ALVEOLAR IMPLOSIVE", id: "0257" },
-  { symbol: "pʼ", desc: "BILABIAL EJECTIVE", id: "0070 + 02BC" },
+  { symbol: "pʼ", desc: "BILABIAL EJECTIVE", id: "0070_02BC" },
   { symbol: "ǃ", desc: "(POST)ALVEOLAR CLICK", id: "01C3" },
   { symbol: "ʄ", desc: "VOICED PALATAL IMPLOSIVE", id: "0284" },
-  { symbol: "tʼ", desc: "DENTAL/ALVEOLAR EJECTIVE", id: "0074 + 02BC" },
+  { symbol: "tʼ", desc: "DENTAL/ALVEOLAR EJECTIVE", id: "0074_02BC" },
   { symbol: "ǂ", desc: "PALATOALVEOLAR CLICK", id: "01C2" },
   { symbol: "ɠ", desc: "VOICED VELAR IMPLOSIVE", id: "0260" },
-  { symbol: "kʼ", desc: "VELAR EJECTIVE", id: "006B + 02BC" },
+  { symbol: "kʼ", desc: "VELAR EJECTIVE", id: "006B_02BC" },
   { symbol: "ǁ", desc: "ALVEOLAR LATERAL CLICK", id: "01C1" },
   { symbol: "ʛ", desc: "VOICED UVULAR IMPLOSIVE", id: "029B" },
-  { symbol: "sʼ", desc: "ALVEOLAR FRICATIVE EJECTIVE", id: "0073 + 02BC" },
+  { symbol: "sʼ", desc: "ALVEOLAR FRICATIVE EJECTIVE", id: "0073_02BC" },
   { symbol: "ʍ", desc: "VOICELESS LABIAL-VELAR FRICATIVE", id: "028D" },
   { symbol: "ɕ", desc: "VOICELESS ALVEOLO-PALATAL FRICATIVE", id: "0255" },
   { symbol: "ʑ", desc: "VOICED ALVEOLO-PALATAL FRICATIVE", id: "0291" },
