@@ -4,17 +4,51 @@
 
   button
     margin-top: 1em
-
+    font-size: 1.2em
+    height: 50px
 
 #play-btn
   width: 100px
   height: 100px
   padding: 0
+  margin: 20px 0
   display: inline-flex
+  border-radius: 50px
+  background: white
+  border-color: black
   justify-content: center
-  place-items: center
   align-items: center
+  place-items: center
+  color: black
+  font-size: 2em
+
+  a.loading
+    background: gray!important
+    
+  &.corrected
+    background: limegreen
+    border-color: green
+    color: white
+  
+  &.incorrected
+    background: pink
+    color: maroon
 
   .bi
-    width: 2em
-    height: 2em
+    width: 50px
+    height: 50px
+
+  .bi-play-fill
+    padding-left: 5px
+
+  &.playing
+    background: red
+    border-color: red
+    color: white
+    
+  &.played
+    background: white
+    border-color: red
+    color: red
+
+
