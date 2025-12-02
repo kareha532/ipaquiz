@@ -12,6 +12,24 @@
   align-items: center;
 }
 
+h1 {
+  margin: 0;
+  margin-top: 1rem;
+  padding: 0;
+}
+
+.subheader {
+  margin-top: 1em;
+  font-size: 1.2em;
+}
+
+.selector {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: .5em;
+  row-gap: .5em;
+}
+
 #start-btn {
   background: blue;
   color: white;

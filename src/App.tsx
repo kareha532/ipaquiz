@@ -26,8 +26,8 @@ function App() {
     <div className="flex-center">
       <h1>IPA クイズ</h1>
 
-      <div>問題の形式</div>
-      <div>
+      <div className='subheader'>問題の形式</div>
+      <div className='selector'>
         <button
           className={mode === "multiple" ? "selected" : ""}
           onClick={() => setMode("multiple")}
@@ -35,7 +35,6 @@ function App() {
           4択
         </button>
         <button
-          disabled
           className={mode === "input" ? "selected" : ""}
           onClick={() => setMode("input")}
         >
@@ -45,8 +44,10 @@ function App() {
 
       {mode !== "" && (
         <>
-          <div>問題の種類</div>
-          <TypeSelector mode={mode} type={type} changeType={changeType} />
+          <div className='subheader'>問題の種類</div>
+          <div className='selector'>
+            <TypeSelector mode={mode} type={type} changeType={changeType} />
+          </div>
         </>
       )}
 
@@ -66,7 +67,7 @@ const TypeSelector = (
 
   if (mode === "multiple") {
     return (
-      <div>
+      <>
         <button
           className={type === "audiotoipa" ? "selected" : ""}
           onClick={() => changeType("audiotoipa")}>
@@ -79,12 +80,18 @@ const TypeSelector = (
         >
           IPA→音声
         </button>
-      </div>
+      </>
     )
   }
   else if (mode === "input") {
     return (
-      <div>
+      <>
+        <button
+          className={type === "audiotoinput" ? "selected" : ""}
+          onClick={() => changeType("audiotoinput")}
+        >
+          音声→IPA
+        </button>
         <button
           className={type === "wordtoipa" ? "selected" : ""}
           onClick={() => changeType("wordtoipa")}
@@ -97,7 +104,7 @@ const TypeSelector = (
         >
           IPA→単語
         </button>
-      </div>
+      </>
     )
   }
 }

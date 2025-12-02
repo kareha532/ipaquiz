@@ -7,6 +7,43 @@
     font-size: 1.2em
     height: 50px
 
+#question-counter
+  margin-top: 1em
+  display: inline-block
+  background: lightgray
+  border-radius: 5px
+  padding: 0 .5em
+
+#word-container
+  display: inline-flex
+  flex-direction: column
+  background: #efefef
+  border: solid 2px lightgray
+  border-radius: 10px
+  margin-top: 1em
+  margin-bottom: 4em
+  padding: .5em 2em
+  width: calc(100vw - 200px)
+
+  #word-lang
+    background: white
+    margin: .5em auto
+    padding: 0 .5em
+    border-radius: 5px
+    border: solid 1px #484848
+    font-weight: bold
+
+  #word-body
+    font-size: 1.7em
+    margin-bottom: .5em
+    color: #333
+    display: flex
+    justify-content: center
+    font-family: "Georgia", "FreeSerif", "Times New Roman", "Noto Serif", serif, sans-serif
+
+    .word-body-ipa
+      margin: 0 .3em
+  
 #play-btn
   width: 100px
   height: 100px
@@ -25,15 +62,6 @@
   a.loading
     background: gray!important
     
-  &.corrected
-    background: limegreen
-    border-color: green
-    color: white
-  
-  &.incorrected
-    background: pink
-    color: maroon
-
   .bi
     width: 50px
     height: 50px
@@ -45,10 +73,97 @@
     background: red
     border-color: red
     color: white
-    
-  &.played
-    background: white
-    border-color: red
-    color: red
 
+.corrected
+  background: limegreen!important
+  border-color: green!important
+  color: white!important
+  transition: 0.2s ease-in-out
 
+.incorrected
+  background: pink!important
+  border-color: maroon!important
+  color: maroon!important
+  transition: 0.2s ease-in-out
+
+#input
+
+#result-input
+  margin-top: 2em
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  row-gap: 1em
+  column-gap: 1em
+
+  button
+    height: 100px
+
+    &:hover
+      cursor: default
+
+#result
+  margin-top: 2em
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  row-gap: 1em
+  column-gap: 1em
+
+  button
+    height: 50px
+
+    &:focus, &:hover
+      background: red!important
+      color: white!important
+      border: solid 2px darkred!important
+      transition: .2s ease-in-out
+
+#result, #result-input
+  button
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    border-radius: 10px
+    padding: .5em 0
+    font-size: 1.5em
+    transition: .2s ease-in-out
+      
+    &.corrected
+      background: limegreen
+      color: white
+      border: solid 2px green
+
+    &.incorrected
+      background: pink
+      color: maroon
+      border: solid 2px maroon
+
+    .result-lang
+      background: white
+      padding: 0 .5em
+      border-radius: 5px
+      border: solid 1px #484848
+      color: black
+      font-size: .8rem
+      font-weight: bold
+      
+    .result-word
+      font-family: serif
+
+    .result-ipa
+      font-family: serif
+      font-size: 1rem
+
+.go-home-btn
+  background: blue;
+  color: white;
+  margin-top: 3em;
+  text-decoration: none;
+  padding: .5em 2em;
+  border-radius: 10px;
+  border-color: darkblue;
+  transition: 0.2s ease-in-out;
+
+  &:hover
+    background: darkblue;
+    transition: 0.2s ease-in-out;
